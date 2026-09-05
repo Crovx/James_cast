@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>James Cast Planner | Arquitectura de Eventos de Alta Gama en Torreón</title>
+  <meta name="description" content="Producción integral y diseño escenográfico de alta gama para Bodas, XV Años de Gala, Bautizos y Graduaciones en Torreón y la Comarca Lagunera.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #131313;
+        color: #e5e2e1;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    
+    /* Custom Scrollbar for Luxury Dark Aesthetic */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0e0e0e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #353535;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #e9c349;
+    }
+
+    /* Animation utilities */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(233, 195, 73, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(233, 195, 73, 0.6);
+      }
+    }
+    .glow-gold {
+      animation: pulseGlow 3s infinite;
+    }
+
+    .slider-handle {
+      box-shadow: 0 0 15px rgba(0,0,0,0.6), 0 0 10px rgba(233, 195, 73, 0.5);
+    }
+
+    .thumb-active {
+      border-color: #e9c349 !important;
+      opacity: 1 !important;
+      transform: scale(1.08);
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#131313",
+            "surface": "#131313",
+            "surface-dim": "#131313",
+            "surface-bright": "#393939",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-container-low": "#1c1b1b",
+            "surface-container": "#20201f",
+            "surface-container-high": "#2a2a2a",
+            "surface-container-highest": "#353535",
+            "surface-variant": "#353535",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#c4c7c7",
+            "inverse-surface": "#e5e2e1",
+            "inverse-on-surface": "#313030",
+            "outline": "#8e9192",
+            "outline-variant": "#444748",
+            "primary": "#c9c6c5",
+            "on-primary": "#313030",
+            "primary-container": "#0d0d0d",
+            "on-primary-container": "#7c7a7a",
+            "inverse-primary": "#5f5e5e",
+            "primary-fixed": "#e5e2e1",
+            "primary-fixed-dim": "#c9c6c5",
+            "on-primary-fixed": "#1c1b1b",
+            "on-primary-fixed-variant": "#474646",
+            "secondary": "#e9c349",
+            "on-secondary": "#3c2f00",
+            "secondary-container": "#af8d11",
+            "on-secondary-container": "#342800",
+            "secondary-fixed": "#ffe088",
+            "secondary-fixed-dim": "#e9c349",
+            "on-secondary-fixed": "#241a00",
+            "on-secondary-fixed-variant": "#574500",
+            "tertiary": "#c6c7c6",
+            "on-tertiary": "#2f3130",
+            "tertiary-container": "#0b0d0d",
+            "on-tertiary-container": "#797b7a",
+            "tertiary-fixed": "#e2e2e2",
+            "tertiary-fixed-dim": "#c6c7c6",
+            "on-tertiary-fixed": "#1a1c1c",
+            "on-tertiary-fixed-variant": "#454747",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "on-error-container": "#ffdad6"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter-mobile": "1rem",
+            "gutter-desktop": "2.5rem",
+            "space-3xs": "0.25rem",
+            "space-2xs": "0.5rem",
+            "space-xs": "0.75rem",
+            "space-sm": "1rem",
+            "space-md": "1.5rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "space-2xl": "4.5rem",
+            "space-3xl": "6rem",
+            "space-4xl": "8rem",
+            "container-max": "1440px"
+          },
+          fontFamily: {
+            "headline-lg": ["Anton", "sans-serif"],
+            "headline-md": ["Anton", "sans-serif"],
+            "headline-sm": ["Anton", "sans-serif"],
+            "display-xl": ["Anton", "sans-serif"],
+            "display-xl-mobile": ["Anton", "sans-serif"],
+            "headline-lg-mobile": ["Anton", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "display-xl": ["84px", { "lineHeight": "88px", "letterSpacing": "0.04em", "fontWeight": "400" }],
+            "display-xl-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "headline-lg": ["56px", { "lineHeight": "60px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-md": ["36px", { "lineHeight": "42px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "30px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-md": ["17px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "300" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "300" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.22em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary selection:text-black">
+  <!-- NAVIGATION HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl border-b border-surface-container-high/60 transition-all duration-300" id="mainHeader">
+    <div class="h-20 max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-sm">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-space-sm group">
+        <img alt="James Cast Planner Logo" class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPZl91oYnxIwqm_W8xphVvpEgxylDLVM4b5zDzzYFjkabWZGIK8CP9kUw4-l4IcsMIUxnW43q9EVz64MMFr4f7RK55SdE9wSox6AWutn0wYIoz4Z5jiRQ7xf-BEJ8DFmfm_bmyR87xfVnvyxfjqIWszmICpYowlQ8nIuXZmMxiCh9WXjWWvAkNClQo2iPc5BJ60Z9LvFA5X1xhTh2MqXSgRxn9A61UmkU3vWLjSzKQSnU1Cgpf67BHCZbcZ7xebthYjw">
+        <span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider select-none group-hover:text-secondary transition-colors">James Cast</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden xl:flex items-center gap-space-md" id="desktopNav">
+        <a class="nav-link font-label-caps text-label-caps uppercase text-secondary font-semibold transition-colors duration-200" href="#hero">Inicio</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#eventos">Eventos</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#transformaciones">Transformaciones</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#galeria">Galería</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#como-trabajamos">Cómo trabajamos</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#testimonios">Testimonios</a>
+        <a class="nav-link font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#contacto">Contacto</a>
+      </nav>
+
+      <!-- Action Button & Mobile Trigger -->
+      <div class="flex items-center gap-space-sm">
+        <a class="hidden sm:inline-flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase px-space-md py-space-xs hover:bg-secondary hover:text-on-secondary transition-all duration-300 font-semibold shadow-md hover:shadow-secondary/20" href="https://wa.me/528715041603?text=Hola%20James%20Cast,%20me%20gustar%C3%ADa%20cotizar%20la%20producci%C3%B3n%20de%20mi%20evento%20exclusivo." rel="noopener noreferrer" target="_blank">
+          Cotiza tu evento
+        </a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Abrir Menú" class="xl:hidden p-2 text-on-surface hover:text-secondary focus:outline-none transition-colors" onclick="toggleMobileMenu()">
+          <span class="material-symbols-outlined text-[30px]" id="mobileMenuIcon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileDrawer" class="hidden xl:hidden bg-surface-container-lowest/98 backdrop-blur-2xl border-b border-surface-container-high px-gutter-mobile py-space-lg flex flex-col gap-space-md shadow-2xl transition-all duration-300">
+      <nav class="flex flex-col gap-space-sm">
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-secondary py-2 border-b border-surface-container" href="#hero">Inicio</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2 border-b border-surface-container" href="#eventos">Eventos</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2 border-b border-surface-container" href="#transformaciones">Transformaciones</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2 border-b border-surface-container" href="#galeria">Galería</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2 border-b border-surface-container" href="#como-trabajamos">Cómo trabajamos</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2 border-b border-surface-container" href="#testimonios">Testimonios</a>
+        <a onclick="closeMobileMenu()" class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-secondary py-2" href="#contacto">Contacto</a>
+      </nav>
+      <div class="pt-space-xs flex flex-col gap-space-xs">
+        <a class="w-full text-center py-space-sm bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold" href="https://wa.me/528715041603?text=Hola%20James%20Cast,%20me%20gustar%C3%ADa%20cotizar%20la%20producci%C3%B3n%20de%20mi%20evento%20exclusivo." target="_blank">
+          Cotizar por WhatsApp
+        </a>
+        <a class="w-full text-center py-space-xs text-on-surface-variant font-body-sm flex items-center justify-center gap-1" href="tel:+528715041603">
+          <span class="material-symbols-outlined text-[16px] text-secondary">call</span> +52 871 504 1603
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-20 bg-surface min-h-screen">
+    <div class="flex flex-col w-full">
+
+      <!-- 1. HERO SECTION -->
+      <section class="relative w-full -mt-20 pt-32 pb-space-3xl min-h-[92vh] flex items-center justify-center overflow-hidden bg-surface-container-lowest" id="hero">
+        <!-- Atmospheric Background Image with Luxury Scrim -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrsjvBOfMzZ0QdRxRx-w9iiAlpM6pes7R67U1cl5OD6LQLX0SF9XZeDpbaucNZsj7dyyOkgxMOyeIjcJ6j_fLU2S8OervmmBP8QTHFpqe13gQsDUkUBFD8X2fvofoNmF8SwXMc6QF3ZX45OiAUSco6416dtweFJ2MLsPkiSxPzwbn1MO7H7dFb6LmDKrAeOOfAJQVhkeAMa51haIeQp6YPONM9rIpehxjfgGjOFCPn5Y3rsabwW13ZGBM7zexISMLMSxi6466c-c7EjA');"></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-surface/90 via-surface/80 to-surface-container-lowest"></div>
+        <div class="absolute inset-0 z-10 opacity-35 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(19,19,19,0.95)_100%)]"></div>
+        
+        <div class="relative z-20 max-w-[1440px] w-full mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col items-start gap-space-lg">
+          
+          <!-- Category Tagline & Logo Badge -->
+          <div class="flex flex-wrap items-center gap-space-sm bg-surface-container/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-surface-container-highest/40">
+            <img alt="James Cast Planner" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYLic7QWUCjUWRVXFP34q6DMHUDn9-kLokiVXVZOnbMk_MFMCAPkcWZn_OPJ9FKH7260TnO37dBYnjvjxgFZQ8yLxzITTg0DGQOt6KQbfC5GH5JBr2Qx4reXre1R_VngJGxFzKggg4nz96gaGpixKRYBT1BGlOh1kI0OqMSEdkf5mGsM3s8uSAsSYc1REK7rgRiSR48xKsd3U6UnMdLqCQzvS0leVEoaigE0NjgNqufzN7pNrGeJmbiA2LRjxnZw4n-g">
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            <span class="font-label-caps text-label-caps uppercase tracking-[0.28em] text-secondary">Haute Couture Event Architecture • Torreón, Mx</span>
+          </div>
+
+          <!-- Monumental Headline -->
+          <div class="max-w-5xl">
+            <h1 class="font-display-xl text-display-xl-mobile lg:text-display-xl uppercase text-on-surface leading-none tracking-tight">
+              Eventos Inolvidables,<br>
+              <span class="text-secondary drop-shadow-[0_2px_24px_rgba(233,195,73,0.35)]">Ejecutados con Precisión</span>
+            </h1>
+            <p class="mt-space-md font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-light leading-relaxed">
+              Producción integral y diseño escenográfico de alta gama para Bodas, XV Años de Gala, Bautizos y Graduaciones memorables en Torreón y toda la Comarca Lagunera.
+            </p>
+          </div>
+
+          <!-- Action CTAs -->
+          <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+            <a class="px-space-lg py-space-sm bg-secondary text-on-secondary font-label-caps text-label-caps uppercase hover:brightness-110 transition-all duration-200 flex items-center gap-space-2xs font-bold shadow-lg shadow-secondary/20" href="https://wa.me/528715041603?text=Hola%20James%20Cast,%20me%20gustar%C3%ADa%20cotizar%20la%20producci%C3%B3n%20de%20mi%20evento%20exclusivo." rel="noopener noreferrer" target="_blank">
+              <span>Cotiza tu evento</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+            <a class="px-space-lg py-space-sm bg-surface-container-high/80 backdrop-blur-md text-on-surface hover:bg-surface-container-highest transition-colors duration-200 font-label-caps text-label-caps uppercase flex items-center gap-space-2xs border border-surface-container-highest" href="#galeria">
+              <span>Ver portafolio</span>
+              <span class="material-symbols-outlined text-[18px] text-secondary">auto_awesome</span>
+            </a>
+          </div>
+
+          <!-- Metrics Bar -->
+          <div class="w-full mt-space-xl pt-space-md grid grid-cols-1 md:grid-cols-3 gap-space-md bg-surface-container/70 backdrop-blur-md px-space-md py-space-md border border-surface-container-highest/50">
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-2xs">
+                <span class="font-headline-md text-headline-md text-secondary">+350</span>
+                <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Producciones</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Eventos exclusivos ejecutados sin fricción.</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-2xs">
+                <span class="font-headline-md text-headline-md text-on-surface">8+</span>
+                <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Años de Maestría</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Creando hitos y experiencias de alta sociedad.</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-2xs">
+                <span class="font-headline-md text-headline-md text-secondary">100%</span>
+                <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Llave en Mano</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Desde el concepto 3D hasta la dirección en vivo.</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 2. CATEGORÍAS DE EVENTOS (High-Contrast Editorial Section) -->
+      <section class="w-full py-space-3xl bg-inverse-surface text-inverse-on-surface" id="eventos">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          
+          <!-- Section Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+            <div class="max-w-2xl">
+              <span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary-container font-bold">Nuestras Especialidades</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-inverse-on-surface mt-space-2xs leading-none">
+                Diseñado a la Medida de tus Sueños
+              </h2>
+            </div>
+            <p class="font-body-md text-body-md text-inverse-on-surface/80 max-w-md">
+              Cada celebración demanda una narrativa escenográfica única. Intervenimos recintos vacíos para convertirlos en palacios vivientes de celebración.
+            </p>
+          </div>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            
+            <!-- Card 1: Bodas (Triggers Dedicated Boda Gala Album) -->
+            <div class="group flex flex-col bg-surface-container-lowest text-on-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl">
+              <div class="relative h-72 overflow-hidden cursor-pointer" onclick="openBodaAlbum(0)">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/bodas/media_1788571451413.jpg');"></div>
+                <div class="absolute top-space-xs left-space-xs bg-surface/85 backdrop-blur-sm px-space-2xs py-space-3xs font-label-caps text-label-caps uppercase text-secondary">
+                  Bespoke Wedding
+                </div>
+                <div class="absolute bottom-space-xs right-space-xs bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-[10px] uppercase text-secondary border border-secondary/30 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum 10 Fotos
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Bodas de Lujo</h3>
+                  <p class="mt-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+                    Bodas de gala con montajes que deslumbran: canopia monumental de candelabros de cristal, tapiz botánico suspendido, pista personalizada con monograma y ambientación de alto nivel.
+                  </p>
+                </div>
+                <button onclick="openBodaAlbum(0)" class="font-label-caps text-label-caps uppercase text-secondary group-hover:text-primary-fixed transition-colors flex items-center gap-space-3xs font-semibold text-left">
+                  <span>Ver Álbum Boda de Gala (10 Fotos)</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: XV Años (Triggers Dedicated XV Album) -->
+            <div class="group flex flex-col bg-surface-container-lowest text-on-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl">
+              <div class="relative h-72 overflow-hidden cursor-pointer" onclick="openXvAlbum(0)">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/xv/media_1788570229517.jpg');"></div>
+                <div class="absolute top-space-xs left-space-xs bg-surface/85 backdrop-blur-sm px-space-2xs py-space-3xs font-label-caps text-label-caps uppercase text-secondary">
+                  Gala Couture
+                </div>
+                <div class="absolute bottom-space-xs right-space-xs bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-[10px] uppercase text-secondary border border-secondary/30 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum 9 Fotos
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">XV Años Espectaculares</h3>
+                  <p class="mt-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+                    XV años de ensueño con montajes de alto nivel: iluminación de concierto, techo de esferas disco espejadas y ambientación que convierten cualquier recinto en una noche legendaria.
+                  </p>
+                </div>
+                <button onclick="openXvAlbum(0)" class="font-label-caps text-label-caps uppercase text-secondary group-hover:text-primary-fixed transition-colors flex items-center gap-space-3xs font-semibold text-left">
+                  <span>Ver Álbum XV Años (9 Fotos)</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3: Bautizos (Triggers Dedicated Bautizo Album) -->
+            <div class="group flex flex-col bg-surface-container-lowest text-on-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl">
+              <div class="relative h-72 overflow-hidden cursor-pointer" onclick="openBautizoAlbum(0)">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/bautizo/media_1788570889183.jpg');"></div>
+                <div class="absolute top-space-xs left-space-xs bg-surface/85 backdrop-blur-sm px-space-2xs py-space-3xs font-label-caps text-label-caps uppercase text-secondary">
+                  Safari Chic
+                </div>
+                <div class="absolute bottom-space-xs right-space-xs bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-[10px] uppercase text-secondary border border-secondary/30 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum 7 Fotos
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Bautizos &amp; Comuniones</h3>
+                  <p class="mt-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+                    Bautizos con montajes elegantes y llenos de calidez: escenografías temáticas safari chic, esculturas monumentales de animales, arcos orgánicos y arreglos botánicos que convierten la celebración en un momento inolvidable.
+                  </p>
+                </div>
+                <button onclick="openBautizoAlbum(0)" class="font-label-caps text-label-caps uppercase text-secondary group-hover:text-primary-fixed transition-colors flex items-center gap-space-3xs font-semibold text-left">
+                  <span>Ver Álbum Bautizo (7 Fotos)</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 4: Graduaciones (Triggers Dedicated Odonto Album) -->
+            <div class="group flex flex-col bg-surface-container-lowest text-on-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-2xl">
+              <div class="relative h-72 overflow-hidden cursor-pointer" onclick="openOdontoAlbum(0)">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/odontologia/media_1788569841787.jpg');"></div>
+                <div class="absolute top-space-xs left-space-xs bg-surface/85 backdrop-blur-sm px-space-2xs py-space-3xs font-label-caps text-label-caps uppercase text-secondary">
+                  Mega Production
+                </div>
+                <div class="absolute bottom-space-xs right-space-xs bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-[10px] uppercase text-secondary border border-secondary/30 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum 5 Fotos
+                </div>
+              </div>
+              <div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Graduaciones</h3>
+                  <p class="mt-space-2xs font-body-sm text-body-sm text-on-surface-variant">
+                    Graduaciones con montajes de alto nivel: iluminación arquitectónica, audio de concierto y ambientación que convierten cualquier salón en una celebración inolvidable para festejar este logro por todo lo alto.
+                  </p>
+                </div>
+                <button onclick="openOdontoAlbum(0)" class="font-label-caps text-label-caps uppercase text-secondary group-hover:text-primary-fixed transition-colors flex items-center gap-space-3xs font-semibold text-left">
+                  <span>Ver Álbum Odontología (5 Fotos)</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. TRANSFORMACIONES: ANTES Y DESPUÉS INTERACTIVO -->
+      <section class="w-full py-space-3xl bg-surface-container-low" id="transformaciones">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          <div class="max-w-3xl mb-space-xl">
+            <span class="font-label-caps text-label-caps uppercase text-secondary">Metamorfosis Espacial</span>
+            <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs">
+              De un Salón Vacío a una Experiencia Inolvidable
+            </h2>
+            <p class="mt-space-xs font-body-md text-body-md text-on-surface-variant">
+              No alquilamos mobiliario: reimaginamos la física del espacio. Descubre cómo convertimos superficies sobrias en templos escénicos con cortinaje perimetral, candelabros imperiales y diseño luminotécnico computarizado. Desliza la barra para ver la transformación.
+            </p>
+          </div>
+
+          <!-- Tab Buttons for Comparison -->
+          <div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+            <button class="px-space-md py-space-xs bg-surface-container-highest text-secondary font-label-caps text-label-caps uppercase transition-colors border border-secondary/30" id="tabBtn1" onclick="switchTransformTab(1)">
+              1. Gran Salón de Gala
+            </button>
+            <button class="px-space-md py-space-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors border border-transparent" id="tabBtn2" onclick="switchTransformTab(2)">
+              2. Carpa Jardín Nocturna
+            </button>
+          </div>
+
+          <!-- Comparison 1 Container -->
+          <div class="relative w-full aspect-[16/9] md:aspect-[21/9] max-h-[640px] overflow-hidden select-none group border border-surface-container-highest shadow-2xl" id="comparison1">
+            <!-- AFTER (Background) -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/transformaciones/salon_gala_despues.jpg');">
+              <span class="absolute bottom-space-md right-space-md bg-surface/90 backdrop-blur-md px-space-sm py-space-3xs font-label-caps text-label-caps uppercase text-secondary border border-secondary/40 shadow-lg">
+                DESPUÉS: James Cast Couture
+              </span>
+            </div>
+            <!-- BEFORE (Foreground / Clipped with clip-path) -->
+            <div class="absolute inset-0 bg-cover bg-center" id="clipPane1" style="background-image: url('assets/transformaciones/salon_gala_antes.jpg'); clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <span class="absolute bottom-space-md left-space-md bg-surface/90 backdrop-blur-md px-space-sm py-space-3xs font-label-caps text-label-caps uppercase text-on-surface border border-surface-container-highest shadow-lg">
+                ANTES: Recinto en Obra
+              </span>
+            </div>
+            <!-- Split Divider Line & Handle -->
+            <div class="absolute inset-y-0 w-1 bg-secondary pointer-events-none -ml-0.5 flex items-center justify-center z-20" id="splitBar1" style="left: 50%;">
+              <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-2xl slider-handle ring-4 ring-black/40">
+                <span class="material-symbols-outlined text-[22px] font-bold">swap_horiz</span>
+              </div>
+            </div>
+            <!-- Interactive Slider Controller -->
+            <input class="absolute inset-0 opacity-0 w-full h-full cursor-ew-resize z-30" id="sliderInput1" max="100" min="0" oninput="handleTransformSlide(1, this.value)" type="range" value="50">
+          </div>
+
+          <!-- Comparison 2 Container (Hidden Initially) -->
+          <div class="relative w-full aspect-[16/9] md:aspect-[21/9] max-h-[640px] overflow-hidden select-none group hidden border border-surface-container-highest shadow-2xl" id="comparison2">
+            <!-- AFTER (Background) -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/transformaciones/carpa_jardin_despues.jpg');">
+              <span class="absolute bottom-space-md right-space-md bg-surface/90 backdrop-blur-md px-space-sm py-space-3xs font-label-caps text-label-caps uppercase text-secondary border border-secondary/40 shadow-lg">
+                DESPUÉS: Pabellón Celestial
+              </span>
+            </div>
+            <!-- BEFORE (Foreground / Clipped with clip-path) -->
+            <div class="absolute inset-0 bg-cover bg-center" id="clipPane2" style="background-image: url('assets/transformaciones/carpa_jardin_antes.jpg'); clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <span class="absolute bottom-space-md left-space-md bg-surface/90 backdrop-blur-md px-space-sm py-space-3xs font-label-caps text-label-caps uppercase text-on-surface border border-surface-container-highest shadow-lg">
+                ANTES: Carpa Básica
+              </span>
+            </div>
+            <!-- Split Divider Line & Handle -->
+            <div class="absolute inset-y-0 w-1 bg-secondary pointer-events-none -ml-0.5 flex items-center justify-center z-20" id="splitBar2" style="left: 50%;">
+              <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-2xl slider-handle ring-4 ring-black/40">
+                <span class="material-symbols-outlined text-[22px] font-bold">swap_horiz</span>
+              </div>
+            </div>
+            <!-- Interactive Slider Controller -->
+            <input class="absolute inset-0 opacity-0 w-full h-full cursor-ew-resize z-30" id="sliderInput2" max="100" min="0" oninput="handleTransformSlide(2, this.value)" type="range" value="50">
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 4. GALERÍA DE EVENTOS (Interactive Editorial Portfolio) -->
+      <section class="w-full py-space-3xl bg-surface" id="galeria">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+            <div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary">Curation &amp; Atmosphere</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs">
+                Portafolio Editorial
+              </h2>
+            </div>
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center gap-space-2xs" id="galleryFilters">
+              <button class="filter-btn px-space-sm py-space-3xs bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase transition-colors font-semibold" onclick="filterGallery('all', this)">
+                Todos
+              </button>
+              <button class="filter-btn px-space-sm py-space-3xs bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors font-semibold" onclick="filterGallery('bodas', this)">
+                Bodas
+              </button>
+              <button class="filter-btn px-space-sm py-space-3xs bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors font-semibold" onclick="filterGallery('xv', this)">
+                XV Años
+              </button>
+              <button class="filter-btn px-space-sm py-space-3xs bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors font-semibold" onclick="filterGallery('graduaciones', this)">
+                Graduaciones
+              </button>
+              <button class="filter-btn px-space-sm py-space-3xs bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors font-semibold" onclick="filterGallery('bautizos', this)">
+                Bautizos
+              </button>
+            </div>
+          </div>
+
+          <!-- Clean Asymmetric Editorial Grid (Balanced 12-column layout) -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md" id="galleryGrid">
+            
+            <!-- Item 1: Wide Feature (Bodas de Gala - SINGLE ENTRY POINT CARD TO THE 5-PHOTO BODA ALBUM) -->
+            <div class="gallery-item md:col-span-8 group relative aspect-[16/10] overflow-hidden bg-surface-container-highest cursor-pointer border border-secondary/30 transition-all duration-300 hover:border-secondary shadow-xl" data-category="bodas" onclick="openBodaAlbum(0)">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/bodas/media_1788571451413.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+              
+              <!-- Album Tag Badge -->
+              <div class="absolute top-space-xs left-space-xs bg-secondary text-on-secondary px-2.5 py-1 font-label-caps text-[10px] uppercase font-bold flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum • 10 Fotos
+              </div>
+
+              <div class="absolute bottom-space-md left-space-md right-space-md flex justify-between items-end">
+                <div>
+                  <span class="font-label-caps text-label-caps uppercase text-secondary">Boda Real de Gala • M&amp;R</span>
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Un amor que hace historia.</h4>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-secondary/20 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined text-[20px]">collections</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Portrait Accent (Bodas al Aire Libre - SINGLE ENTRY POINT CARD TO THE 8-PHOTO ALBUM) -->
+            <div class="gallery-item md:col-span-4 group relative aspect-[4/5] md:aspect-auto overflow-hidden bg-surface-container-highest cursor-pointer border border-secondary/30 transition-all duration-300 hover:border-secondary shadow-xl" data-category="bodas" onclick="openBodaAireLibreAlbum(0)">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/boda-aire-libre/media_1788571886986.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+              
+              <!-- Album Tag Badge -->
+              <div class="absolute top-space-xs left-space-xs bg-secondary text-on-secondary px-2.5 py-1 font-label-caps text-[10px] uppercase font-bold flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum • 8 Fotos
+              </div>
+
+              <div class="absolute bottom-space-md left-space-md right-space-md flex justify-between items-end">
+                <div>
+                  <span class="font-label-caps text-label-caps uppercase text-secondary">Boda al Aire Libre</span>
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Elegancia natural &amp; Pabellón.</h4>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-secondary/20 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined text-[20px]">collections</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: XV Años de Gala (SINGLE ENTRY POINT CARD TO THE 9-PHOTO XV ALBUM) -->
+            <div class="gallery-item md:col-span-4 group relative aspect-square overflow-hidden bg-surface-container-highest cursor-pointer border border-secondary/30 transition-all duration-300 hover:border-secondary shadow-xl" data-category="xv" onclick="openXvAlbum(0)">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/xv/media_1788570229517.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+              
+              <!-- Album Tag Badge -->
+              <div class="absolute top-space-xs left-space-xs bg-secondary text-on-secondary px-2.5 py-1 font-label-caps text-[10px] uppercase font-bold flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum • 9 Fotos
+              </div>
+
+              <div class="absolute bottom-space-md left-space-md right-space-md flex justify-between items-end">
+                <div>
+                  <span class="font-label-caps text-label-caps uppercase text-secondary">XV Años • Regina</span>
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Una noche que brilla contigo.</h4>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-secondary/20 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined text-[20px]">collections</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Graduación UAC Odontología (SINGLE ENTRY POINT CARD TO THE 10-PHOTO ODONTO ALBUM) -->
+            <div class="gallery-item md:col-span-4 group relative aspect-square overflow-hidden bg-surface-container-highest cursor-pointer border border-secondary/30 transition-all duration-300 hover:border-secondary shadow-xl" data-category="graduaciones" onclick="openOdontoAlbum(0)">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/odontologia/media_1788569841787.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+              
+              <!-- Album Tag Badge -->
+              <div class="absolute top-space-xs left-space-xs bg-secondary text-on-secondary px-2.5 py-1 font-label-caps text-[10px] uppercase font-bold flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum • 10 Fotos
+              </div>
+
+              <div class="absolute bottom-space-md left-space-md right-space-md flex justify-between items-end">
+                <div>
+                  <span class="font-label-caps text-label-caps uppercase text-secondary">Graduación UAC Odontología</span>
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Elegancia que celebra tu logro.</h4>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-secondary/20 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined text-[20px]">collections</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Bautizo Safari Chic • Carlitos (SINGLE ENTRY POINT CARD TO THE 5-PHOTO BAUTIZO ALBUM) -->
+            <div class="gallery-item md:col-span-4 group relative aspect-square overflow-hidden bg-surface-container-highest cursor-pointer border border-secondary/30 transition-all duration-300 hover:border-secondary shadow-xl" data-category="bautizos" onclick="openBautizoAlbum(0)">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/bautizo/media_1788570699159.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+              
+              <!-- Album Tag Badge -->
+              <div class="absolute top-space-xs left-space-xs bg-secondary text-on-secondary px-2.5 py-1 font-label-caps text-[10px] uppercase font-bold flex items-center gap-1.5 shadow-md">
+                <span class="material-symbols-outlined text-[14px]">photo_library</span> Álbum • 7 Fotos
+              </div>
+
+              <div class="absolute bottom-space-md left-space-md right-space-md flex justify-between items-end">
+                <div>
+                  <span class="font-label-caps text-label-caps uppercase text-secondary">Bautizo • Carlitos</span>
+                  <h4 class="font-headline-sm text-headline-sm uppercase text-on-surface">Safari Chic &amp; Magia Familiar.</h4>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-secondary/20 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined text-[20px]">collections</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CÓMO TRABAJAMOS: METODOLOGÍA ATELIER -->
+      <section class="w-full py-space-3xl bg-surface-container-lowest" id="como-trabajamos">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-2xl">
+            <div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary">Metodología de Excelencia</span>
+              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs">
+                Nuestro Proceso
+              </h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Un enfoque riguroso de cuatro etapas donde no existe margen de improvisación. Precisión arquitectónica vestida con alta costura.
+            </p>
+          </div>
+
+          <!-- 4 Stepped Columns -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            
+            <!-- Step 1 -->
+            <div class="p-space-lg bg-surface-container flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 border border-surface-container-high hover:border-secondary/30">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-outline-variant block leading-none">01</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-space-sm">Consulta &amp; Visión</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                  Sesión uno a uno con James Cast. Escuchamos tus aspiraciones, inspeccionamos el recinto y definimos el universo conceptual y la paleta arquitectónica.
+                </p>
+              </div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary mt-space-md">Semana 1 • Conceptualización</span>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="p-space-lg bg-surface-container flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 border border-surface-container-high hover:border-secondary/30">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-secondary block leading-none">02</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-space-sm">Propuesta 3D &amp; Presupuesto</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                  Modelado tridimensional a escala real del salón. Visualizas exactamente cada candelabro, textura floral y pasillo antes de colocar el primer perno.
+                </p>
+              </div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary mt-space-md">Semana 2-3 • Renders &amp; Costos</span>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="p-space-lg bg-surface-container flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 border border-surface-container-high hover:border-secondary/30">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-outline-variant block leading-none">03</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-space-sm">Producción &amp; Montaje</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                  Despliegue logístico con días de antelación. Riggers certificados, ingenieros de iluminación, floristas y tramoyistas trabajando bajo estricta bitácora.
+                </p>
+              </div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary mt-space-md">Días Previos • Ejecución Técnica</span>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="p-space-lg bg-surface-container flex flex-col justify-between min-h-[300px] transition-all duration-300 hover:-translate-y-1.5 border border-surface-container-high hover:border-secondary/30">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-secondary block leading-none">04</span>
+                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mt-space-sm">Dirección en Vivo</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                  Coordinación ejecutiva minuto a minuto: protocolo de tiempos, atención a invitados VIP, timing de pirotecnia y catering. Tu única misión es disfrutar.
+                </p>
+              </div>
+              <span class="font-label-caps text-label-caps uppercase text-secondary mt-space-md">Día DEL evento • Experiencia Perfecta</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. TESTIMONIOS EDITORIALES -->
+      <section class="w-full py-space-3xl bg-surface" id="testimonios">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          
+          <div class="max-w-2xl mb-space-2xl">
+            <span class="font-label-caps text-label-caps uppercase text-secondary">Voces de Confianza</span>
+            <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs">
+              Testimonios
+            </h2>
+            <p class="mt-space-xs font-body-md text-body-md text-on-surface-variant">
+              Las familias y comités más distinguidos de Torreón y La Laguna avalan nuestra firma.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            
+            <!-- Testimonial 1 -->
+            <div class="p-space-lg bg-surface-container-low flex flex-col justify-between relative border border-surface-container transition-all hover:border-secondary/40">
+              <span class="material-symbols-outlined text-secondary text-[42px] opacity-40 mb-space-sm">format_quote</span>
+              <p class="font-body-lg text-body-lg text-on-surface italic font-light leading-relaxed">
+                "James transformó por completo el salón de nuestra boda en el Campestre. Los candelabros gigantes y la iluminación arquitectónica dejaron a todos los invitados sin palabras. Cero estrés para nosotros."
+              </p>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-sm border-t border-surface-container">
+                <div class="w-11 h-11 rounded-full bg-secondary/20 flex items-center justify-center font-headline-sm text-secondary font-bold">S</div>
+                <div>
+                  <span class="font-title-md text-title-md text-on-surface block font-semibold">Sofía &amp; Rodrigo</span>
+                  <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Boda de Gala • Club Campestre Torreón</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="p-space-lg bg-surface-container-low flex flex-col justify-between relative border border-surface-container transition-all hover:border-secondary/40">
+              <span class="material-symbols-outlined text-secondary text-[42px] opacity-40 mb-space-sm">format_quote</span>
+              <p class="font-body-lg text-body-lg text-on-surface italic font-light leading-relaxed">
+                "La mejor decisión para los XV años de mi hija Regina. El techo de esferas disco, las luces robóticas y la puntualidad fueron de otro mundo. Superó cualquier expectativa que teníamos."
+              </p>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-sm border-t border-surface-container">
+                <div class="w-11 h-11 rounded-full bg-secondary/20 flex items-center justify-center font-headline-sm text-secondary font-bold">M</div>
+                <div>
+                  <span class="font-title-md text-title-md text-on-surface block font-semibold">Lic. Marcela Treviño</span>
+                  <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">XV Años de Gala Regina • Hacienda La Española</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="p-space-lg bg-surface-container-low flex flex-col justify-between relative border border-surface-container transition-all hover:border-secondary/40">
+              <span class="material-symbols-outlined text-secondary text-[42px] opacity-40 mb-space-sm">format_quote</span>
+              <p class="font-body-lg text-body-lg text-on-surface italic font-light leading-relaxed">
+                "La graduación más impresionante que ha tenido la facultad de Odontología en años. La muela iluminada, el dosel drapeado y los candelabros crearon un ambiente inolvidable. James Cast y su equipo son unos genios."
+              </p>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-sm border-t border-surface-container">
+                <div class="w-11 h-11 rounded-full bg-secondary/20 flex items-center justify-center font-headline-sm text-secondary font-bold">U</div>
+                <div>
+                  <span class="font-title-md text-title-md text-on-surface block font-semibold">Comité Odontología UAC '25</span>
+                  <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Graduación Generación 2025</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. PREGUNTAS FRECUENTES (Interactive Accordion) -->
+      <section class="w-full py-space-3xl bg-surface-container-low" id="faq">
+        <div class="max-w-[1000px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+          
+          <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+            <span class="font-label-caps text-label-caps uppercase text-secondary">Claridad &amp; Certeza</span>
+            <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs">
+              Preguntas Frecuentes
+            </h2>
+            <p class="mt-space-xs font-body-md text-body-md text-on-surface-variant">
+              Todo lo que necesitas saber antes de iniciar tu proyecto de evento de alta gama.
+            </p>
+          </div>
+
+          <!-- FAQ Items List -->
+          <div class="flex flex-col gap-space-xs">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-surface-container border border-surface-container-high overflow-hidden transition-colors">
+              <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm focus:outline-none hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)">
+                <span class="font-title-md text-title-md text-on-surface font-semibold">¿Con cuánta anticipación debo reservar mi fecha?</span>
+                <span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-300 faq-icon">expand_more</span>
+              </button>
+              <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-space-md pb-0">
+                <p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+                  Recomendamos asegurar tu fecha de 6 a 12 meses de anticipación para bodas y graduaciones mayores, y de 3 a 6 meses para XV Años y Bautizos. Debido a que sólo coordinamos un número limitado de producciones por fin de semana, garantizamos exclusividad absoluta a cada anfitrión.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-surface-container border border-surface-container-high overflow-hidden transition-colors">
+              <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm focus:outline-none hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)">
+                <span class="font-title-md text-title-md text-on-surface font-semibold">¿Trabajan únicamente en Torreón o cubren otras ciudades?</span>
+                <span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-300 faq-icon">expand_more</span>
+              </button>
+              <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-space-md pb-0">
+                <p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+                  Nuestra base de operaciones está en Torreón, Coahuila, y cubrimos con frecuencia Gómez Palacio, Lerdo, Saltillo, Parras de la Fuente y Monterrey. También realizamos bodas de destino en playas y haciendas coloniales en todo el territorio mexicano.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-surface-container border border-surface-container-high overflow-hidden transition-colors">
+              <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm focus:outline-none hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)">
+                <span class="font-title-md text-title-md text-on-surface font-semibold">¿Qué incluye el servicio de producción integral llave en mano?</span>
+                <span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-300 faq-icon">expand_more</span>
+              </button>
+              <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-space-md pb-0">
+                <p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+                  Abarca el concepto escenográfico completo, visualizaciones 3D fotorrealistas, cortinaje perimetral a medida, candelabros de cristal exclusivos, pistas de baile espejadas o personalizadas, audio concert D&amp;B, iluminación arquitectónica computarizada, floristería de autor y la dirección protocolaria segundo a segundo en vivo.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-surface-container border border-surface-container-high overflow-hidden transition-colors">
+              <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm focus:outline-none hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)">
+                <span class="font-title-md text-title-md text-on-surface font-semibold">¿Se puede personalizar el diseño de iluminación y mobiliario?</span>
+                <span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-300 faq-icon">expand_more</span>
+              </button>
+              <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-space-md pb-0">
+                <p class="font-body-md text-body-md text-on-surface-variant pb-space-md leading-relaxed">
+                  Totalmente. No repetimos montajes genéricos. Cada paleta de color, curva de atenuación lumínica y tipología de sillas se eligen en sintonía estricta con la personalidad y la identidad de la ocasión.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. SECCIÓN DE CONTACTO & COTIZACIÓN (Deep Noir Focus) -->
+      <section class="w-full py-space-4xl bg-surface-container-lowest text-on-surface relative overflow-hidden" id="contacto">
+        <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-start">
+            
+            <!-- Contact Meta & Telephone Highlight -->
+            <div class="lg:col-span-5 flex flex-col gap-space-lg">
+              <div>
+                <span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Inicia la Creación</span>
+                <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-space-2xs leading-none">
+                  ¿Listo para Transformar tu Próximo Evento?
+                </h2>
+                <p class="mt-space-md font-body-lg text-body-lg text-on-surface-variant font-light leading-relaxed">
+                  Conversemos hoy mismo. Las fechas más codiciadas de la temporada en Torreón se agotan rápidamente.
+                </p>
+              </div>
+
+              <!-- Quick Contacts -->
+              <div class="p-space-lg bg-surface-container border border-surface-container-high flex flex-col gap-space-md shadow-xl">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center border border-secondary/20">
+                    <span class="material-symbols-outlined text-secondary text-[28px]">phone_in_talk</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Llamada o WhatsApp Concierge</span>
+                    <a class="font-headline-sm text-headline-sm text-on-surface hover:text-secondary transition-colors" href="tel:+528715041603">
+                      +52 871 504 1603
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center border border-secondary/20">
+                    <span class="material-symbols-outlined text-secondary text-[28px]">pin_drop</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Sede Atelier</span>
+                    <span class="font-body-md text-body-md text-on-surface font-medium">Torreón, Coahuila, México</span>
+                  </div>
+                </div>
+
+                <a class="w-full py-space-sm bg-[#25D366] text-black font-label-caps text-label-caps uppercase hover:brightness-110 transition-all flex items-center justify-center gap-space-2xs mt-space-xs font-bold shadow-lg" href="https://wa.me/528715041603?text=Hola%20James,%20deseo%20agendar%20una%20cita%20de%20visión%20presencial%20para%20mi%20evento." rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[20px]">chat</span>
+                  <span>Abrir Chat WhatsApp Inmediato</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Consultation Form -->
+            <div class="lg:col-span-7 bg-surface-container p-space-xl border border-surface-container-high shadow-2xl">
+              <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-md">
+                Solicitud de Presupuesto Exclusivo
+              </h3>
+              
+              <form class="flex flex-col gap-space-md" id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-space-3xs">
+                    <label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-medium">Nombre y Apellido *</label>
+                    <input class="w-full bg-surface-container-lowest/80 border border-surface-container-highest p-3 text-on-surface font-body-md focus:outline-none focus:border-secondary transition-colors placeholder:text-outline" id="formName" placeholder="Ej. Ana Cristina Valdés" required="" type="text">
+                  </div>
+                  <div class="flex flex-col gap-space-3xs">
+                    <label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-medium">Teléfono / WhatsApp *</label>
+                    <input class="w-full bg-surface-container-lowest/80 border border-surface-container-highest p-3 text-on-surface font-body-md focus:outline-none focus:border-secondary transition-colors placeholder:text-outline" id="formPhone" placeholder="Ej. 871 123 4567" required="" type="tel">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-space-3xs">
+                    <label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-medium">Tipo de Celebración</label>
+                    <select class="w-full bg-surface-container-lowest/80 border border-surface-container-highest p-3 text-on-surface font-body-md focus:outline-none focus:border-secondary transition-colors" id="formType">
+                      <option value="XV Años Espectaculares">XV Años Espectaculares</option>
+                      <option value="Graduación Universitaria / High School">Graduación Universitaria (Ej. Odontología)</option>
+                      <option value="Boda de Gala">Boda de Gala</option>
+                      <option value="Bautizo / Primera Comunión">Bautizo / Primera Comunión</option>
+                      <option value="Evento Corporativo / Gala Privada">Evento Corporativo / Gala Privada</option>
+                    </select>
+                  </div>
+                  <div class="flex flex-col gap-space-3xs">
+                    <label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-medium">Fecha Tentativa</label>
+                    <input class="w-full bg-surface-container-lowest/80 border border-surface-container-highest p-3 text-on-surface font-body-md focus:outline-none focus:border-secondary transition-colors text-on-surface" id="formDate" type="date">
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-space-3xs">
+                  <label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-medium">Detalles del recinto o visión</label>
+                  <textarea class="w-full bg-surface-container-lowest/80 border border-surface-container-highest p-3 text-on-surface font-body-md focus:outline-none focus:border-secondary transition-colors placeholder:text-outline" id="formNotes" placeholder="Lugar tentativo, número estimado de invitados, elementos deseados (candelabros, carpa, orquesta)..." rows="3"></textarea>
+                </div>
+
+                <button class="w-full py-space-md bg-secondary text-on-secondary font-label-caps text-label-caps uppercase hover:brightness-110 transition-all duration-200 mt-space-sm flex items-center justify-center gap-space-2xs font-bold shadow-lg shadow-secondary/20" type="submit">
+                  <span>Enviar solicitud por WhatsApp</span>
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+
+                <p class="text-center font-body-sm text-body-sm text-on-surface-variant">
+                  Respuesta personalizada en menos de 2 horas por nuestro Concierge VIP.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- DEDICATED ODONTOLOGÍA ALBUM MODAL -->
+  <div id="odontoAlbumModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex-col items-center justify-between p-4 sm:p-6 transition-opacity duration-300">
+    <!-- Header Controls -->
+    <div class="w-full max-w-6xl flex items-center justify-between border-b border-surface-container-high/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <div>
+          <span class="font-label-caps text-[11px] uppercase text-secondary font-bold">Álbum Exclusivo de Graduación</span>
+          <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">UAC Odontología '25</h3>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="odontoCounter" class="font-label-caps text-label-caps uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-surface-container-highest">Foto 1 de 10</span>
+        <button onclick="closeOdontoAlbum()" class="text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar álbum">
+          <span class="material-symbols-outlined text-[32px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Active Slide Display -->
+    <div class="relative w-full max-w-6xl flex-grow flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button onclick="prevOdontoSlide()" class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto anterior">
+        <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+      </button>
+
+      <!-- Image -->
+      <div class="w-full h-full flex flex-col items-center justify-center max-h-[62vh]">
+        <img id="odontoActiveImg" src="assets/odontologia/media_1788572485357.jpg" alt="Graduación Odontología 25" class="max-h-[54vh] max-w-full object-contain rounded shadow-2xl border border-surface-container-highest">
+        <div class="text-center mt-3 max-w-2xl px-4">
+          <h4 id="odontoActiveTitle" class="font-headline-sm text-title-lg sm:text-headline-sm uppercase text-secondary">Escenario Monumental con Backdrop Dental Escultórico</h4>
+          <p id="odontoActiveDesc" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Vista imponente del escenario principal con el backdrop artístico retroiluminado en forma de muela, pasarela geométrica y drapeados fluidos en tonos champagne.</p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextOdontoSlide()" class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto siguiente">
+        <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Thumbnails & Action Bar -->
+    <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-surface-container-high/80">
+      <div class="flex items-center gap-2 overflow-x-auto py-1" id="odontoThumbs"></div>
+      <a class="px-5 py-2.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg flex-shrink-0" href="https://wa.me/528715041603?text=Hola%20James,%20vi%20el%20%C3%A1lbum%20de%20Graduaci%C3%B3n%20de%20Odontolog%C3%ADa%20y%20me%20gustar%C3%ADa%20cotizar%20un%20montaje%20similar." target="_blank">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Cotizar estilo similar</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- DEDICATED XV AÑOS ALBUM MODAL (INTERACTIVE SHOWCASE) -->
+  <div id="xvAlbumModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex-col items-center justify-between p-4 sm:p-6 transition-opacity duration-300">
+    <!-- Header Controls -->
+    <div class="w-full max-w-6xl flex items-center justify-between border-b border-surface-container-high/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <div>
+          <span class="font-label-caps text-[11px] uppercase text-secondary font-bold">Álbum Exclusivo de XV Años</span>
+          <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">XV Años de Gala • Regina</h3>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="xvCounter" class="font-label-caps text-label-caps uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-surface-container-highest">Foto 1 de 5</span>
+        <button onclick="closeXvAlbum()" class="text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar álbum">
+          <span class="material-symbols-outlined text-[32px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Active Slide Display -->
+    <div class="relative w-full max-w-6xl flex-grow flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button onclick="prevXvSlide()" class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto anterior">
+        <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+      </button>
+
+      <!-- Image -->
+      <div class="w-full h-full flex flex-col items-center justify-center max-h-[62vh]">
+        <img id="xvActiveImg" src="assets/xv/media_1788570229517.jpg" alt="XV Años Regina" class="max-h-[54vh] max-w-full object-contain rounded shadow-2xl border border-surface-container-highest">
+        <div class="text-center mt-3 max-w-2xl px-4">
+          <h4 id="xvActiveTitle" class="font-headline-sm text-title-lg sm:text-headline-sm uppercase text-secondary">Gala Disco & Quinceañera Real</h4>
+          <p id="xvActiveDesc" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quinceañera con vestido haute couture verde salvia bajo constelación de esferas disco espejadas y monograma luminoso "R".</p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextXvSlide()" class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto siguiente">
+        <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Thumbnails & Action Bar -->
+    <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-surface-container-high/80">
+      <div class="flex items-center gap-2 overflow-x-auto py-1" id="xvThumbs"></div>
+      <a class="px-5 py-2.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg flex-shrink-0" href="https://wa.me/528715041603?text=Hola%20James,%20vi%20el%20%C3%A1lbum%20de%20XV%20A%C3%B1os%20de%20Gala%20y%20me%20gustar%C3%ADa%20cotizar%20un%20montaje%20similar." target="_blank">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Cotizar XV Años de Gala</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- DEDICATED BAUTIZO ALBUM MODAL (INTERACTIVE SHOWCASE) -->
+  <div id="bautizoAlbumModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex-col items-center justify-between p-4 sm:p-6 transition-opacity duration-300">
+    <!-- Header Controls -->
+    <div class="w-full max-w-6xl flex items-center justify-between border-b border-surface-container-high/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <div>
+          <span class="font-label-caps text-[11px] uppercase text-secondary font-bold">Álbum Exclusivo de Bautizo</span>
+          <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Bautizo Safari Chic • Carlitos</h3>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="bautizoCounter" class="font-label-caps text-label-caps uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-surface-container-highest">Foto 1 de 5</span>
+        <button onclick="closeBautizoAlbum()" class="text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar álbum">
+          <span class="material-symbols-outlined text-[32px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Active Slide Display -->
+    <div class="relative w-full max-w-6xl flex-grow flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button onclick="prevBautizoSlide()" class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto anterior">
+        <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+      </button>
+
+      <!-- Image -->
+      <div class="w-full h-full flex flex-col items-center justify-center max-h-[62vh]">
+        <img id="bautizoActiveImg" src="assets/bautizo/media_1788570699159.jpg" alt="Bautizo Carlitos" class="max-h-[54vh] max-w-full object-contain rounded shadow-2xl border border-surface-container-highest">
+        <div class="text-center mt-3 max-w-2xl px-4">
+          <h4 id="bautizoActiveTitle" class="font-headline-sm text-title-lg sm:text-headline-sm uppercase text-secondary">Escenografía Central: Safari Chic &amp; 'Mi Bautizo Carlitos'</h4>
+          <p id="bautizoActiveDesc" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Montaje monumental con arquería escalonada verde oliva, esculturas artesanales de elefante y jirafa a escala, guirnaldas orgánicas de globos y pedestal dorado con pastel de autor.</p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextBautizoSlide()" class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto siguiente">
+        <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Thumbnails & Action Bar -->
+    <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-surface-container-high/80">
+      <div class="flex items-center gap-2 overflow-x-auto py-1" id="bautizoThumbs"></div>
+      <a class="px-5 py-2.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg flex-shrink-0" href="https://wa.me/528715041603?text=Hola%20James,%20vi%20el%20%C3%A1lbum%20de%20Bautizo%20Safari%20Chic%20y%20me%20gustar%C3%ADa%20cotizar%20un%20montaje%20similar." target="_blank">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Cotizar Bautizo de Lujo</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- DEDICATED BODA DE GALA ALBUM MODAL (INTERACTIVE SHOWCASE) -->
+  <div id="bodaAlbumModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex-col items-center justify-between p-4 sm:p-6 transition-opacity duration-300">
+    <!-- Header Controls -->
+    <div class="w-full max-w-6xl flex items-center justify-between border-b border-surface-container-high/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <div>
+          <span class="font-label-caps text-[11px] uppercase text-secondary font-bold">Álbum Exclusivo de Boda de Gala</span>
+          <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Boda Real de Gala • M&amp;R</h3>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="bodaCounter" class="font-label-caps text-label-caps uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-surface-container-highest">Foto 1 de 5</span>
+        <button onclick="closeBodaAlbum()" class="text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar álbum">
+          <span class="material-symbols-outlined text-[32px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Active Slide Display -->
+    <div class="relative w-full max-w-6xl flex-grow flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button onclick="prevBodaSlide()" class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto anterior">
+        <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+      </button>
+
+      <!-- Image -->
+      <div class="w-full h-full flex flex-col items-center justify-center max-h-[62vh]">
+        <img id="bodaActiveImg" src="assets/bodas/media_1788571451413.jpg" alt="Boda de Gala M&R" class="max-h-[54vh] max-w-full object-contain rounded shadow-2xl border border-surface-container-highest">
+        <div class="text-center mt-3 max-w-2xl px-4">
+          <h4 id="bodaActiveTitle" class="font-headline-sm text-title-lg sm:text-headline-sm uppercase text-secondary">Perspectiva Monumental: Candelabros &amp; Escenografía M&amp;R</h4>
+          <p id="bodaActiveDesc" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Canopia masiva de candelabros de cristal bohemio suspendidos sobre tapiz floral blanco, pista de autor con monograma "MR" y mesa imperial de honor.</p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextBodaSlide()" class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto siguiente">
+        <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Thumbnails & Action Bar -->
+    <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-surface-container-high/80">
+      <div class="flex items-center gap-2 overflow-x-auto py-1" id="bodaThumbs"></div>
+      <a class="px-5 py-2.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg flex-shrink-0" href="https://wa.me/528715041603?text=Hola%20James,%20vi%20el%20%C3%A1lbum%20de%20Boda%20de%20Gala%20y%20me%20gustar%C3%ADa%20cotizar%20un%20montaje%20similar." target="_blank">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Cotizar Boda de Gala</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- DEDICATED BODA AL AIRE LIBRE ALBUM MODAL (INTERACTIVE SHOWCASE) -->
+  <div id="bodaAireLibreAlbumModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl hidden flex-col items-center justify-between p-4 sm:p-6 transition-opacity duration-300">
+    <!-- Header Controls -->
+    <div class="w-full max-w-6xl flex items-center justify-between border-b border-surface-container-high/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <div>
+          <span class="font-label-caps text-[11px] uppercase text-secondary font-bold">Álbum Exclusivo de Boda al Aire Libre</span>
+          <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Boda al Aire Libre • Pabellón Celestial</h3>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="bodaAireLibreCounter" class="font-label-caps text-label-caps uppercase text-on-surface-variant bg-surface-container px-3 py-1 rounded-full border border-surface-container-highest">Foto 1 de 8</span>
+        <button onclick="closeBodaAireLibreAlbum()" class="text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar álbum">
+          <span class="material-symbols-outlined text-[32px]">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Active Slide Display -->
+    <div class="relative w-full max-w-6xl flex-grow flex items-center justify-center my-4 overflow-hidden">
+      <!-- Prev Button -->
+      <button onclick="prevBodaAireLibreSlide()" class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto anterior">
+        <span class="material-symbols-outlined text-[28px]">chevron_left</span>
+      </button>
+
+      <!-- Image -->
+      <div class="w-full h-full flex flex-col items-center justify-center max-h-[62vh]">
+        <img id="bodaAireLibreActiveImg" src="assets/boda-aire-libre/media_1788572158903.jpg" alt="Boda al Aire Libre" class="max-h-[54vh] max-w-full object-contain rounded shadow-2xl border border-surface-container-highest">
+        <div class="text-center mt-3 max-w-2xl px-4">
+          <h4 id="bodaAireLibreActiveTitle" class="font-headline-sm text-title-lg sm:text-headline-sm uppercase text-secondary">Descenso Nupcial &amp; Fuentes de Pirotecnia Fría</h4>
+          <p id="bodaAireLibreActiveDesc" class="font-body-sm text-body-sm text-on-surface-variant mt-1">Llegada triunfal de los novios descendiendo por la majestuosa escalinata exterior flanqueada por cascadas de chispas frías y arquitectura clásica.</p>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button onclick="nextBodaAireLibreSlide()" class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-surface-container-high/80 hover:bg-secondary hover:text-on-secondary text-on-surface backdrop-blur-md flex items-center justify-center transition-all shadow-2xl border border-surface-container-highest" aria-label="Foto siguiente">
+        <span class="material-symbols-outlined text-[28px]">chevron_right</span>
+      </button>
+    </div>
+
+    <!-- Thumbnails & Action Bar -->
+    <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-surface-container-high/80">
+      <div class="flex items-center gap-2 overflow-x-auto py-1" id="bodaAireLibreThumbs"></div>
+      <a class="px-5 py-2.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-lg flex-shrink-0" href="https://wa.me/528715041603?text=Hola%20James,%20vi%20el%20%C3%A1lbum%20de%20Boda%20al%20Aire%20Libre%20y%20me%20gustar%C3%ADa%20cotizar%20un%20montaje%20similar." target="_blank">
+        <span class="material-symbols-outlined text-[18px]">chat</span>
+        <span>Cotizar Boda al Aire Libre</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- STANDARD LIGHTBOX MODAL FOR PORTFOLIO -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex-col items-center justify-center p-4 transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/80 hover:text-secondary p-2 transition-colors focus:outline-none" aria-label="Cerrar modal">
+      <span class="material-symbols-outlined text-[36px]">close</span>
+    </button>
+    <div class="max-w-5xl max-h-[85vh] flex flex-col items-center gap-4">
+      <img id="lightboxImg" src="" alt="Vista ampliada" class="max-h-[70vh] max-w-full object-contain shadow-2xl border border-surface-container-highest">
+      <div class="text-center">
+        <span id="lightboxCategory" class="font-label-caps text-label-caps uppercase text-secondary block"></span>
+        <h4 id="lightboxTitle" class="font-headline-sm text-headline-sm uppercase text-on-surface mt-1"></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING CONCIERGE BUTTON -->
+  <aside class="fixed bottom-space-md right-space-md z-40 flex items-center gap-space-xs">
+    <a class="group flex items-center bg-surface-container-high/90 hover:bg-surface-container-highest backdrop-blur-xl px-space-sm py-space-xs shadow-2xl border border-secondary/30 transition-all duration-300 hover:scale-105" href="https://wa.me/528715041603" rel="noopener noreferrer" target="_blank">
+      <span class="material-symbols-outlined text-secondary text-[24px] mr-space-2xs animate-bounce">chat</span>
+      <div class="flex flex-col text-left">
+        <span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Concierge VIP</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface">WhatsApp Directo</span>
+      </div>
+    </a>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-container-lowest border-t border-surface-container-high">
+    <div class="max-w-[1440px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl items-start">
+        
+        <div class="md:col-span-4 flex flex-col items-start gap-space-sm">
+          <div class="flex items-center gap-space-sm">
+            <img alt="James Cast Planner" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3QyadbLaAbVZCJsU5xrXkdw4OFRfilyiTe7CPLneBYB5bh1UiZacHpBs6S0GzQi7LPpDguihd_tpdb-EyNtvVnJuGQoimnSAgE8J1syhqYJIwoa1-yWF1_bogfHlCsvACuCuFBj48TyHDyZGQNnb7Jk-oCFqxkgAMG8WCaiWATISJCWXiR13xUCyAwAzCmdsrxb3CvDpoqUMApDlc8Eh_F4ONBDnnP8hRSWVuQqH76TFD52dS92anxjpl_k85DOoG1g">
+            <span class="font-headline-md text-headline-md uppercase text-on-surface">James Cast</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+            Arquitectura de eventos memorables y producción de alta gama en el Norte de México.
+          </p>
+          <div class="flex items-center gap-space-2xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px] text-secondary">location_on</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Torreón, Coahuila, México</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 flex flex-col gap-space-sm">
+          <span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Navegación</span>
+          <div class="flex flex-col gap-space-xs">
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#hero">Inicio</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#eventos">Eventos Exclusivos</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#transformaciones">Transformaciones Espaciales</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#galeria">Galería de Producciones</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#como-trabajamos">Metodología Atelier</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#testimonios">Testimonios</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 flex flex-col gap-space-sm">
+          <span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Contacto &amp; Redes</span>
+          <div class="flex flex-col gap-space-xs">
+            <a class="font-body-md text-body-md text-on-surface hover:text-secondary transition-colors duration-200 flex items-center gap-space-2xs" href="tel:+528715041603">
+              <span class="material-symbols-outlined text-[18px] text-secondary">call</span>+52 871 504 1603
+            </a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200 flex items-center gap-space-2xs" href="https://www.instagram.com/jamesplannermx/" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px] text-secondary">photo_camera</span>Instagram: @jamesplannermx
+            </a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors duration-200 flex items-center gap-space-2xs" href="https://www.facebook.com/profile.php?id=100046244902677" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px] text-secondary">public</span>Facebook Oficial
+            </a>
+            <a class="font-body-sm text-body-sm text-secondary hover:underline transition-colors duration-200 flex items-center gap-space-2xs" href="https://wa.me/528715041603" rel="noopener noreferrer" target="_blank">
+              <span class="material-symbols-outlined text-[18px] text-secondary">chat</span>Atención Directa Concierge
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-space-2xl pt-space-md border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-sm">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 James Cast Planner. Todos los derechos reservados. Torreón, Coahuila.</p>
+        <p class="font-label-caps text-label-caps uppercase text-secondary font-semibold">Haute Couture Event Architecture</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT CONTROLLERS -->
+  <script>
+    // 1. Odontología Album Photos Dataset (10 Curated High-Res Photos)
+    const odontoPhotos = [
+      {
+        src: "assets/odontologia/media_1788572485357.jpg",
+        title: "Escenario Monumental con Backdrop Dental Escultórico",
+        desc: "Vista imponente del escenario principal con el backdrop artístico retroiluminado en forma de muela, pasarela geométrica y drapeados fluidos en tonos champagne."
+      },
+      {
+        src: "assets/odontologia/media_1788572485376.jpg",
+        title: "Celebración & Lluvia Monumental de Confeti Plateado",
+        desc: "Momento culminante de la noche de gala con los graduados celebrando en la pista bajo una espectacular lluvia de confeti metálico reflectante."
+      },
+      {
+        src: "assets/odontologia/media_1788569841787.jpg",
+        title: "Perspectiva del Gran Salón Odontología 2025",
+        desc: "Vista panorámica del salón transformado: arquerías iluminadas, candelabros imperiales, mesas con vajilla de gala y jardineras clásicas."
+      },
+      {
+        src: "assets/odontologia/media_1788572485262.jpg",
+        title: "Mesa de Gala con Candelas Flotantes & Pista Geométrica",
+        desc: "Montaje de mesa con mantelería oscura, cristalería fina y centro con múltiples cilindros de velas encendidas sobre la pista de baile."
+      },
+      {
+        src: "assets/odontologia/media_1788572485293.jpg",
+        title: "Esfera Floral Blanca & Bajaplatos Dorados Martillados",
+        desc: "Detalle de mesa redonda con centro esférico de flores blancas, vajilla de gala con servilletas negras y drapeados dorados con iluminación cálida."
+      },
+      {
+        src: "assets/odontologia/media_1788572490741.jpg",
+        title: "Mesa Imperial con Estructura Botánica & Candelabros",
+        desc: "Arreglo elevado en pedestal cruzado con follajes verdes exuberantes, rodeado de copas de cristal y veladoras en cilindros transparentes."
+      },
+      {
+        src: "assets/odontologia/media_1788569841566.jpg",
+        title: "Dosel Monumental & Candelabros Suspendidos",
+        desc: "Intervención aérea con lienzos drapeados en espiral suspendidos, clusters de candelabros de cristal bohemio e iluminación cálida envolvente."
+      },
+      {
+        src: "assets/odontologia/media_1788569841154.jpg",
+        title: "Muro Escénico con Muela de Autor",
+        desc: "Instalación escenográfica con retroiluminación ámbar, silueta dental artística e iluminación perimetral temática."
+      },
+      {
+        src: "assets/odontologia/media_1788569841377.jpg",
+        title: "Mesa Imperial & Centro Floral 'Odontología 25'",
+        desc: "Montaje de mesa de honor con centros de mesa esféricos de flores blancas, copas de cristal facetado y fondo drapeado con branding de generación."
+      },
+      {
+        src: "assets/odontologia/media_1788569841810.jpg",
+        title: "Dosel Aéreo & Arreglos Florales Elevados",
+        desc: "Diseño botánico vertical sobre pedestales geométricos, complementando el drapeado circular del techo y el juego de velas flotantes."
+      }
+    ];
+
+    let currentOdontoIndex = 0;
+
+    function renderOdontoThumbs() {
+      const container = document.getElementById('odontoThumbs');
+      container.innerHTML = '';
+      odontoPhotos.forEach((photo, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.src;
+        thumb.alt = photo.title;
+        thumb.className = `w-14 h-14 object-cover cursor-pointer rounded border-2 transition-all opacity-60 hover:opacity-100 ${idx === currentOdontoIndex ? 'thumb-active' : 'border-surface-container-highest'}`;
+        thumb.onclick = () => showOdontoSlide(idx);
+        container.appendChild(thumb);
+      });
+    }
+
+    function showOdontoSlide(idx) {
+      if (idx < 0) idx = odontoPhotos.length - 1;
+      if (idx >= odontoPhotos.length) idx = 0;
+      currentOdontoIndex = idx;
+
+      const photo = odontoPhotos[idx];
+      document.getElementById('odontoActiveImg').src = photo.src;
+      document.getElementById('odontoActiveTitle').textContent = photo.title;
+      document.getElementById('odontoActiveDesc').textContent = photo.desc;
+      document.getElementById('odontoCounter').textContent = `Foto ${idx + 1} de ${odontoPhotos.length}`;
+
+      renderOdontoThumbs();
+    }
+
+    function nextOdontoSlide() {
+      showOdontoSlide(currentOdontoIndex + 1);
+    }
+
+    function prevOdontoSlide() {
+      showOdontoSlide(currentOdontoIndex - 1);
+    }
+
+    function openOdontoAlbum(initialIndex = 0) {
+      const modal = document.getElementById('odontoAlbumModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showOdontoSlide(initialIndex);
+    }
+
+    function closeOdontoAlbum() {
+      const modal = document.getElementById('odontoAlbumModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 2. XV Años Album Photos Dataset (Full 9-Photo Curated Collection)
+    const xvPhotos = [
+      {
+        src: "assets/xv/media_1788570229517.jpg",
+        title: "Gala Disco & Quinceañera Real",
+        desc: "Quinceañera con vestido haute couture verde salvia bajo constelación de esferas disco espejadas y monograma luminoso 'R'."
+      },
+      {
+        src: "assets/xv/media_1788570229777.jpg",
+        title: "Pista de Baile Geométrica & Show de Esferas Espejadas",
+        desc: "Diseño de pista monocromática de autor, clusters de esferas disco suspendidas e iluminación robótica envolvente."
+      },
+      {
+        src: "assets/xv/media_1788570230168.jpg",
+        title: "Instalación Lumínica: Orbes RGB & Esferas de Cristal",
+        desc: "Atmósfera nocturna con orbes de color RGB flotantes, esferas de espejo y juego de haces de luz de alta potencia."
+      },
+      {
+        src: "assets/xv/media_1788570230139.jpg",
+        title: "Bellini Travel Bar de Lujo",
+        desc: "Barra móvil boutique de madera noble con grifería dorada, coctelería artesanal y espejo grabado 'RR - XV Renata Herrera Rentería'."
+      },
+      {
+        src: "assets/xv/media_1788570270765.jpg",
+        title: "Coctelería de Autor & Mixología Exclusiva",
+        desc: "Estación de mixología con carta de autor, cristalería facetada, flores finas e iluminación escenográfica cálida."
+      },
+      {
+        src: "assets/xv/media_1788570278231.jpg",
+        title: "Alta Costura & Macro Detalles",
+        desc: "Bordados artesanales con cristales y pedrería en corsé verde salvia, complementado con bouquet de rosas inglesas y amaranto."
+      },
+      {
+        src: "assets/xv/media_1788570270778.jpg",
+        title: "Retrato Editorial en Escalera Imperial",
+        desc: "Sesión de gala destacando la majestuosa caída del vestido con tiara de princesa en entorno arquitectónico contemporáneo."
+      },
+      {
+        src: "assets/xv/media_1788570278203.jpg",
+        title: "Pista de Baile Circular & Escenografía Nocturna",
+        desc: "Perspectiva nocturna de la pista geométrica blanca y negra, esferas de espejo retroiluminadas y escenario con monograma 'R'."
+      },
+      {
+        src: "assets/xv/media_1788570270725.jpg",
+        title: "Momento Emotivo Familiar",
+        desc: "Abrazo íntimo y conmovedor con papá en la escalinata de honor previo a la entrada protocolaria de gala."
+      }
+    ];
+
+    let currentXvIndex = 0;
+
+    function renderXvThumbs() {
+      const container = document.getElementById('xvThumbs');
+      container.innerHTML = '';
+      xvPhotos.forEach((photo, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.src;
+        thumb.alt = photo.title;
+        thumb.className = `w-14 h-14 object-cover cursor-pointer rounded border-2 transition-all opacity-60 hover:opacity-100 ${idx === currentXvIndex ? 'thumb-active' : 'border-surface-container-highest'}`;
+        thumb.onclick = () => showXvSlide(idx);
+        container.appendChild(thumb);
+      });
+    }
+
+    function showXvSlide(idx) {
+      if (idx < 0) idx = xvPhotos.length - 1;
+      if (idx >= xvPhotos.length) idx = 0;
+      currentXvIndex = idx;
+
+      const photo = xvPhotos[idx];
+      document.getElementById('xvActiveImg').src = photo.src;
+      document.getElementById('xvActiveTitle').textContent = photo.title;
+      document.getElementById('xvActiveDesc').textContent = photo.desc;
+      document.getElementById('xvCounter').textContent = `Foto ${idx + 1} de ${xvPhotos.length}`;
+
+      renderXvThumbs();
+    }
+
+    function nextXvSlide() {
+      showXvSlide(currentXvIndex + 1);
+    }
+
+    function prevXvSlide() {
+      showXvSlide(currentXvIndex - 1);
+    }
+
+    function openXvAlbum(initialIndex = 0) {
+      const modal = document.getElementById('xvAlbumModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showXvSlide(initialIndex);
+    }
+
+    function closeXvAlbum() {
+      const modal = document.getElementById('xvAlbumModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 3. Bautizo Album Photos Dataset (Full 7-Photo Curated Collection)
+    const bautizoPhotos = [
+      {
+        src: "assets/bautizo/media_1788570889253.jpg",
+        title: "Perspectiva del Gran Salón & Escenografía Completa",
+        desc: "Vista panorámica del salón transformado: dosel de flecos dorados suspendidos, mesas de gala vestidas y el monumental escenario 'Mi Bautizo Carlitos'."
+      },
+      {
+        src: "assets/bautizo/media_1788570699159.jpg",
+        title: "Escenografía Central: Safari Chic & 'Mi Bautizo Carlitos'",
+        desc: "Montaje monumental con arquería escalonada verde oliva, esculturas artesanales de elefante y jirafa a escala, guirnaldas orgánicas de globos y pedestal dorado con pastel de autor."
+      },
+      {
+        src: "assets/bautizo/media_1788570889183.jpg",
+        title: "Mesa de Gala & Cristalería Fina",
+        desc: "Montaje de mesa con cuenco dorado de flores blancas y texturas botánicas, cristalería facetada, servilletas en lino verde salvia y cubertería dorada."
+      },
+      {
+        src: "assets/bautizo/media_1788570699049.jpg",
+        title: "Photo Opportunity de Bienvenida",
+        desc: "Muro de bienvenida con patrón Toile de Jouy safari en tonos salvia, monograma 'C - mi bautizo' y topiarios esféricos de follaje natural con rosas blancas sobre pedestales cúbicos."
+      },
+      {
+        src: "assets/bautizo/media_1788570699147.jpg",
+        title: "Perspectiva de Mesas & Ambientación del Salón",
+        desc: "Composición espacial integrando centros de mesa florales, copas de cristal verde olivo, arcos escénicos con globos en tonos nude, salvia y dorado."
+      },
+      {
+        src: "assets/bautizo/media_1788570699223.jpg",
+        title: "Escultura de Jirafa & Urna Botánica",
+        desc: "Detalle escultural de la jirafa artesanal junto al arco texturizado, racimos de globos perlados y la majestuosa urna floral con rosas y eucalipto."
+      },
+      {
+        src: "assets/bautizo/media_1788570699121.jpg",
+        title: "Urna Clásica & Arreglo Floral de Alta Gama",
+        desc: "Detalle botánico en copa imperial blanca con follajes silvestres, eucalipto fresco y rosas de jardín, enmarcado por globos orgánicos satinados."
+      }
+    ];
+
+    let currentBautizoIndex = 0;
+
+    function renderBautizoThumbs() {
+      const container = document.getElementById('bautizoThumbs');
+      container.innerHTML = '';
+      bautizoPhotos.forEach((photo, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.src;
+        thumb.alt = photo.title;
+        thumb.className = `w-14 h-14 object-cover cursor-pointer rounded border-2 transition-all opacity-60 hover:opacity-100 ${idx === currentBautizoIndex ? 'thumb-active' : 'border-surface-container-highest'}`;
+        thumb.onclick = () => showBautizoSlide(idx);
+        container.appendChild(thumb);
+      });
+    }
+
+    function showBautizoSlide(idx) {
+      if (idx < 0) idx = bautizoPhotos.length - 1;
+      if (idx >= bautizoPhotos.length) idx = 0;
+      currentBautizoIndex = idx;
+
+      const photo = bautizoPhotos[idx];
+      document.getElementById('bautizoActiveImg').src = photo.src;
+      document.getElementById('bautizoActiveTitle').textContent = photo.title;
+      document.getElementById('bautizoActiveDesc').textContent = photo.desc;
+      document.getElementById('bautizoCounter').textContent = `Foto ${idx + 1} de ${bautizoPhotos.length}`;
+
+      renderBautizoThumbs();
+    }
+
+    function nextBautizoSlide() {
+      showBautizoSlide(currentBautizoIndex + 1);
+    }
+
+    function prevBautizoSlide() {
+      showBautizoSlide(currentBautizoIndex - 1);
+    }
+
+    function openBautizoAlbum(initialIndex = 0) {
+      const modal = document.getElementById('bautizoAlbumModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showBautizoSlide(initialIndex);
+    }
+
+    function closeBautizoAlbum() {
+      const modal = document.getElementById('bautizoAlbumModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 4. Boda de Gala Album Photos Dataset (Full 10-Photo Curated Collection)
+    const bodaPhotos = [
+      {
+        src: "assets/bodas/media_1788571451413.jpg",
+        title: "Perspectiva Monumental: Candelabros & Escenografía M&R",
+        desc: "Canopia masiva de candelabros de cristal bohemio suspendidos sobre tapiz floral blanco, pista de autor con monograma 'MR' y mesa imperial de honor."
+      },
+      {
+        src: "assets/bodas/media_1788571593940.jpg",
+        title: "Pista de Gala Circular & Escenario de Espejos",
+        desc: "Perspectiva nocturna de la pista circular con monograma 'MR', gran dosel suspendido de candelabros y muro escénico con arcos dorados retroiluminados."
+      },
+      {
+        src: "assets/bodas/media_1788571451469.jpg",
+        title: "Cielo de Cristal: Candelabros Imperiales & Tapiz Botánico",
+        desc: "Diseño e ingeniería escénica aérea con decenas de candelabros de cristal checo entrelazados en un manto denso de flores blancas."
+      },
+      {
+        src: "assets/bodas/media_1788571593916.jpg",
+        title: "Entrada Triunfal de los Novios",
+        desc: "Los recién casados celebrando con júbilo su gran entrada a la pista bajo haces de luz robótica, lluvia de destellos y la ovación de sus invitados."
+      },
+      {
+        src: "assets/bodas/media_1788571451317.jpg",
+        title: "Celebración Nupcial & Primer Baile de Gala",
+        desc: "Captura emotiva de los novios alzando el ramo floral bajo flecos de cristal en atmósfera de cava colonial con muros de piedra."
+      },
+      {
+        src: "assets/bodas/media_1788571599778.jpg",
+        title: "Mesa de Novios (Sweetheart Table) & Luces Cálidas",
+        desc: "Mesa de honor con candeleros dorados, esferas de luz suspendidas, arreglos de rosas blancas y fondo de ensueño."
+      },
+      {
+        src: "assets/bodas/media_1788571599800.jpg",
+        title: "Banquete Imperial en Cava de Piedra",
+        desc: "Montaje de mesas largas vestidas de negro, sillería medallón, candiles coloniales y muros de piedra iluminados con calidez."
+      },
+      {
+        src: "assets/bodas/media_1788571600109.jpg",
+        title: "Monograma 'MR' en Barricas de Roble & Flores",
+        desc: "Instalación escénica en barricas monumentales con monograma neón 'MR', enredaderas de flores blancas y barricas rústicas de añejamiento."
+      },
+      {
+        src: "assets/bodas/media_1788571451364.jpg",
+        title: "Cava de Gala & Candelabros de Cristal",
+        desc: "Perspectiva de la cava histórica con candelabros clásicos y el monograma luminoso 'MR' al fondo."
+      },
+      {
+        src: "assets/bodas/media_1788571451478.jpg",
+        title: "Mesa Imperial, Velas & Cristalería Fina",
+        desc: "Diseño de mesa de gala con mantelería negra, cristalería facetada, candeleros de cristal con velas flotantes y atmósfera cálida."
+      }
+    ];
+
+    let currentBodaIndex = 0;
+
+    function renderBodaThumbs() {
+      const container = document.getElementById('bodaThumbs');
+      container.innerHTML = '';
+      bodaPhotos.forEach((photo, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.src;
+        thumb.alt = photo.title;
+        thumb.className = `w-14 h-14 object-cover cursor-pointer rounded border-2 transition-all opacity-60 hover:opacity-100 ${idx === currentBodaIndex ? 'thumb-active' : 'border-surface-container-highest'}`;
+        thumb.onclick = () => showBodaSlide(idx);
+        container.appendChild(thumb);
+      });
+    }
+
+    function showBodaSlide(idx) {
+      if (idx < 0) idx = bodaPhotos.length - 1;
+      if (idx >= bodaPhotos.length) idx = 0;
+      currentBodaIndex = idx;
+
+      const photo = bodaPhotos[idx];
+      document.getElementById('bodaActiveImg').src = photo.src;
+      document.getElementById('bodaActiveTitle').textContent = photo.title;
+      document.getElementById('bodaActiveDesc').textContent = photo.desc;
+      document.getElementById('bodaCounter').textContent = `Foto ${idx + 1} de ${bodaPhotos.length}`;
+
+      renderBodaThumbs();
+    }
+
+    function nextBodaSlide() {
+      showBodaSlide(currentBodaIndex + 1);
+    }
+
+    function prevBodaSlide() {
+      showBodaSlide(currentBodaIndex - 1);
+    }
+
+    function openBodaAlbum(initialIndex = 0) {
+      const modal = document.getElementById('bodaAlbumModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showBodaSlide(initialIndex);
+    }
+
+    function closeBodaAlbum() {
+      const modal = document.getElementById('bodaAlbumModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 5. Boda al Aire Libre Album Photos Dataset (Curated 8-Photo Collection)
+    const bodaAireLibrePhotos = [
+      {
+        src: "assets/boda-aire-libre/media_1788572158903.jpg",
+        title: "Descenso Nupcial & Fuentes de Pirotecnia Fría",
+        desc: "Llegada triunfal de los novios descendiendo por la majestuosa escalinata exterior flanqueada por cascadas de chispas frías y arquitectura clásica."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788572158878.jpg",
+        title: "Gran Entrada al Pabellón & Saludo con Servilletas",
+        desc: "Ingreso vibrante de los recién casados al domo nupcial, recibidos con júbilo por todos los invitados agitando servilletas en alto."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788572162102.jpg",
+        title: "Vals Íntimo en Pista Espiral & Atmósfera de Candelabros",
+        desc: "Primer baile de esposos en el centro de la pista con diseño botánico concéntrico, rodeados de sus seres queridos bajo candiles colgantes y pantallas de lino."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788571886986.jpg",
+        title: "Vals Nupcial & Lluvia Monumental de Confeti",
+        desc: "Momento culminante del vals en la pista espiral bajo una mágica lluvia de mariposas blancas e instalación aérea de pantallas cilíndricas."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788571886879.jpg",
+        title: "Pabellón Celestial, Saxofón en Vivo & Pista Espiral",
+        desc: "Actuación de saxofón en vivo sobre la pista de baile personalizada, bajo el imponente dosel arquitectónico de pantallas de lino y esferas de cristal."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788571886971.jpg",
+        title: "Diseño Botánico & Arreglo Floral en Cascada",
+        desc: "Mesa de gala con drapeado en caída floral de rosas blancas y eucalipto, coronada por urnas escultóricas con tulipanes y follajes vivos."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788571886945.jpg",
+        title: "Show Nupcial: Alas Ópticas & Pistola Cryo CO2",
+        desc: "Momento estelar de fiesta con la novia luciendo alas de fibra óptica iluminadas y el novio con cañón de humo criogénico CO2."
+      },
+      {
+        src: "assets/boda-aire-libre/media_1788571886842.jpg",
+        title: "Fiesta & Energía en la Pista",
+        desc: "Los novios celebrando con sus invitados en la tarima al ritmo de la orquesta en vivo e iluminación de concierto."
+      }
+    ];
+
+    let currentBodaAireLibreIndex = 0;
+
+    function renderBodaAireLibreThumbs() {
+      const container = document.getElementById('bodaAireLibreThumbs');
+      container.innerHTML = '';
+      bodaAireLibrePhotos.forEach((photo, idx) => {
+        const thumb = document.createElement('img');
+        thumb.src = photo.src;
+        thumb.alt = photo.title;
+        thumb.className = `w-14 h-14 object-cover cursor-pointer rounded border-2 transition-all opacity-60 hover:opacity-100 ${idx === currentBodaAireLibreIndex ? 'thumb-active' : 'border-surface-container-highest'}`;
+        thumb.onclick = () => showBodaAireLibreSlide(idx);
+        container.appendChild(thumb);
+      });
+    }
+
+    function showBodaAireLibreSlide(idx) {
+      if (idx < 0) idx = bodaAireLibrePhotos.length - 1;
+      if (idx >= bodaAireLibrePhotos.length) idx = 0;
+      currentBodaAireLibreIndex = idx;
+
+      const photo = bodaAireLibrePhotos[idx];
+      document.getElementById('bodaAireLibreActiveImg').src = photo.src;
+      document.getElementById('bodaAireLibreActiveTitle').textContent = photo.title;
+      document.getElementById('bodaAireLibreActiveDesc').textContent = photo.desc;
+      document.getElementById('bodaAireLibreCounter').textContent = `Foto ${idx + 1} de ${bodaAireLibrePhotos.length}`;
+
+      renderBodaAireLibreThumbs();
+    }
+
+    function nextBodaAireLibreSlide() {
+      showBodaAireLibreSlide(currentBodaAireLibreIndex + 1);
+    }
+
+    function prevBodaAireLibreSlide() {
+      showBodaAireLibreSlide(currentBodaAireLibreIndex - 1);
+    }
+
+    function openBodaAireLibreAlbum(initialIndex = 0) {
+      const modal = document.getElementById('bodaAireLibreAlbumModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      showBodaAireLibreSlide(initialIndex);
+    }
+
+    function closeBodaAireLibreAlbum() {
+      const modal = document.getElementById('bodaAireLibreAlbumModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Mobile Drawer Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const icon = document.getElementById('mobileMenuIcon');
+      const isHidden = drawer.classList.contains('hidden');
+      if (isHidden) {
+        drawer.classList.remove('hidden');
+        icon.textContent = 'close';
+      } else {
+        drawer.classList.add('hidden');
+        icon.textContent = 'menu';
+      }
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      const icon = document.getElementById('mobileMenuIcon');
+      drawer.classList.add('hidden');
+      icon.textContent = 'menu';
+    }
+
+    // Transform Slider Controller with smooth pixel-perfect clip-path
+    function handleTransformSlide(id, val) {
+      const clipPane = document.getElementById('clipPane' + id);
+      const splitBar = document.getElementById('splitBar' + id);
+      if (clipPane && splitBar) {
+        clipPane.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+        clipPane.style.webkitClipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+        splitBar.style.left = val + '%';
+      }
+    }
+
+    // Switch between the two Before/After comparisons
+    function switchTransformTab(activeNum) {
+      const comp1 = document.getElementById('comparison1');
+      const comp2 = document.getElementById('comparison2');
+      const btn1 = document.getElementById('tabBtn1');
+      const btn2 = document.getElementById('tabBtn2');
+
+      if (activeNum === 1) {
+        comp1.classList.remove('hidden');
+        comp2.classList.add('hidden');
+        btn1.className = 'px-space-md py-space-xs bg-surface-container-highest text-secondary font-label-caps text-label-caps uppercase transition-colors border border-secondary/30';
+        btn2.className = 'px-space-md py-space-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors border border-transparent';
+      } else {
+        comp1.classList.add('hidden');
+        comp2.classList.remove('hidden');
+        btn2.className = 'px-space-md py-space-xs bg-surface-container-highest text-secondary font-label-caps text-label-caps uppercase transition-colors border border-secondary/30';
+        btn1.className = 'px-space-md py-space-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors border border-transparent';
+      }
+    }
+
+    // Gallery Filter Logic
+    function filterGallery(category, buttonEl) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.className = 'filter-btn px-space-sm py-space-3xs bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase transition-colors font-semibold';
+      });
+      buttonEl.className = 'filter-btn px-space-sm py-space-3xs bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase transition-colors font-semibold';
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // FAQ Accordion Interaction
+    function toggleFaq(buttonEl) {
+      const parent = buttonEl.closest('.faq-item');
+      const answer = parent.querySelector('.faq-answer');
+      const icon = buttonEl.querySelector('.faq-icon');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-answer').style.maxHeight = '0px';
+        item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+      });
+
+      if (!isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Lightbox Modal Functions
+    function openLightbox(imgUrl, category, title) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const catEl = document.getElementById('lightboxCategory');
+      const titleEl = document.getElementById('lightboxTitle');
+
+      img.src = imgUrl;
+      catEl.textContent = category;
+      titleEl.textContent = title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('lightboxModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+
+    document.getElementById('odontoAlbumModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeOdontoAlbum();
+      }
+    });
+
+    document.getElementById('xvAlbumModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeXvAlbum();
+      }
+    });
+
+    document.getElementById('bautizoAlbumModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBautizoAlbum();
+      }
+    });
+
+    document.getElementById('bodaAlbumModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBodaAlbum();
+      }
+    });
+
+    document.getElementById('bodaAireLibreAlbumModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBodaAireLibreAlbum();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeOdontoAlbum();
+        closeXvAlbum();
+        closeBautizoAlbum();
+        closeBodaAlbum();
+        closeBodaAireLibreAlbum();
+        closeMobileMenu();
+      } else if (e.key === 'ArrowRight') {
+        const odontoModal = document.getElementById('odontoAlbumModal');
+        const xvModal = document.getElementById('xvAlbumModal');
+        const bautizoModal = document.getElementById('bautizoAlbumModal');
+        const bodaModal = document.getElementById('bodaAlbumModal');
+        const bodaAireLibreModal = document.getElementById('bodaAireLibreAlbumModal');
+        if (!odontoModal.classList.contains('hidden')) {
+          nextOdontoSlide();
+        } else if (!xvModal.classList.contains('hidden')) {
+          nextXvSlide();
+        } else if (!bautizoModal.classList.contains('hidden')) {
+          nextBautizoSlide();
+        } else if (!bodaModal.classList.contains('hidden')) {
+          nextBodaSlide();
+        } else if (!bodaAireLibreModal.classList.contains('hidden')) {
+          nextBodaAireLibreSlide();
+        }
+      } else if (e.key === 'ArrowLeft') {
+        const odontoModal = document.getElementById('odontoAlbumModal');
+        const xvModal = document.getElementById('xvAlbumModal');
+        const bautizoModal = document.getElementById('bautizoAlbumModal');
+        const bodaModal = document.getElementById('bodaAlbumModal');
+        const bodaAireLibreModal = document.getElementById('bodaAireLibreAlbumModal');
+        if (!odontoModal.classList.contains('hidden')) {
+          prevOdontoSlide();
+        } else if (!xvModal.classList.contains('hidden')) {
+          prevXvSlide();
+        } else if (!bautizoModal.classList.contains('hidden')) {
+          prevBautizoSlide();
+        } else if (!bodaModal.classList.contains('hidden')) {
+          prevBodaSlide();
+        } else if (!bodaAireLibreModal.classList.contains('hidden')) {
+          prevBodaAireLibreSlide();
+        }
+      }
+    });
+
+    // WhatsApp Form Dispatcher
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('formName').value;
+      const phone = document.getElementById('formPhone').value;
+      const type = document.getElementById('formType').value;
+      const date = document.getElementById('formDate').value || 'Por definir';
+      const notes = document.getElementById('formNotes').value || 'Ninguna nota adicional';
+
+      const msg = `*SOLICITUD DE COTIZACIÓN - JAMES CAST PLANNER*%0A%0A` +
+                  `*Cliente:* ${encodeURIComponent(name)}%0A` +
+                  `*Teléfono:* ${encodeURIComponent(phone)}%0A` +
+                  `*Tipo de Evento:* ${encodeURIComponent(type)}%0A` +
+                  `*Fecha Tentativa:* ${encodeURIComponent(date)}%0A` +
+                  `*Detalles / Recinto:* ${encodeURIComponent(notes)}`;
+
+      window.open(`https://wa.me/528715041603?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
